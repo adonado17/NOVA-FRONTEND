@@ -1,6 +1,7 @@
 import { HttpErrorResponse } from '@angular/common/http';
+import { environment } from '../../environments/environment';
 
-export const apiUrl = '/api';
+export const apiUrl = environment.apiUrl;
 
 export function apiErrorMessage(error: unknown): string {
   if (!(error instanceof HttpErrorResponse)) return 'Ocurrió un error inesperado.';

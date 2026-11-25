@@ -2,6 +2,7 @@ import { provideHttpClient } from '@angular/common/http';
 import { HttpTestingController, provideHttpClientTesting } from '@angular/common/http/testing';
 import { TestBed } from '@angular/core/testing';
 import { ReservationService } from './reservation.service';
+import { apiUrl } from '../utils/api';
 
 describe('ReservationService', () => {
   let service: ReservationService;
@@ -23,7 +24,7 @@ describe('ReservationService', () => {
 
   it('envía el CRUD con JWT a la API de reservas', () => {
     const input = { service: 'masaje' as const, scheduledAt: '2030-01-01T15:00:00.000Z', notes: 'Tarde' };
-    const endpoint = '/api/reservations';
+    const endpoint = `${apiUrl}/reservations`;
     const check = (method: string, url: string) => {
       const request = http.expectOne(url);
       expect(request.request.method).toBe(method);

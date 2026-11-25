@@ -42,3 +42,18 @@ __screenshots__/
 # System files
 .DS_Store
 Thumbs.db
+
+# Local configuration and private keys
+.env
+.env.*
+.aws/
+*.pem
+*.key
+*.ppk
+*.p12
+*.pfx
+*.jks
+id_rsa
+id_ed25519
+*.log
+/outputs
